@@ -1,7 +1,7 @@
-import { CompareBench } from '../dist/index.mjs';
+import { Bench } from '../dist/index.mjs';
 import { randomLetterArray } from './utils/index.js';
 
-const bench = new CompareBench();
+const bench = new Bench();
 
 function plus(strings) {
 	let output = '';

@@ -1,20 +1,22 @@
-# tinybench-compare
+# quickbench
+
+Quick and easy benchmarking with various inputs. Minimal wrapper of `tinybench`.
 
 ## Installation
 
 ```sh
-npm i tinybench-compare
-pnpm add tinybench-compare
-yarn add tinybench-compare
-bun add tinybench-compare
+npm i quickbench
+pnpm add quickbench
+yarn add quickbench
+bun add quickbench
 ```
 
 ## Usage
 
 ```js
-import { CompareBench } from 'tinybench-compare';
+import { Bench } from 'quickbench';
 
-const bench = new CompareBench();
+const bench = new Bench();
 
 function plus(strings) {
 	let output = '';
@@ -34,20 +36,19 @@ function concat(strings) {
 
 bench.addFunction('plus', plus).addFunction('join', join).addFunction('concat', concat);
 
-bench.addResource('strings', ['aa', 'bb']);
+bench.addResource('strings', ['aa', 'bb', 'cc', 'dd', 'ee']);
 
 bench.run();
 ```
 
 ```
-┌─────────┬────────────────────┬──────────────┬────────────────────┬──────────┬──────────┐
-│ (index) │     Task Name      │   ops/sec    │ Average Time (ns)  │  Margin  │ Samples  │
-├─────────┼────────────────────┼──────────────┼────────────────────┼──────────┼──────────┤
-│    0    │       'plus'       │ '30,631,714' │ 32.64590316171206  │ '±1.35%' │ 15315858 │
-│    1    │ 'template literal' │ '19,309,837' │ 51.78707425168645  │ '±1.02%' │ 9654920  │
-│    2    │       'join'       │ '13,054,488' │  76.6020082409449  │ '±0.85%' │ 6527245  │
-│    3    │      'concat'      │ '6,924,850'  │ 144.40744421734087 │ '±0.71%' │ 3462426  │
-└─────────┴────────────────────┴──────────────┴────────────────────┴──────────┴──────────┘
+┌─────────┬───────────┬─────────┬────────────────────┬──────────┬─────────┐
+│ (index) │ Task Name │ ops/sec │ Average Time (ns)  │  Margin  │ Samples │
+├─────────┼───────────┼─────────┼────────────────────┼──────────┼─────────┤
+│    0    │  'plus'   │ '2,111' │ 473673.2932964735  │ '±2.41%' │  1056   │
+│    1    │  'join'   │  '648'  │ 1542192.3293975682 │ '±1.84%' │   325   │
+│    2    │ 'concat'  │  '427'  │ 2337976.233842217  │ '±8.18%' │   214   │
+└─────────┴───────────┴─────────┴────────────────────┴──────────┴─────────┘
 Fastest for resource 'strings' was 'plus'.
 ```
 

@@ -1,11 +1,11 @@
 {
-	"name": "tinybench-compare",
+	"name": "quickbench",
 	"version": "0.1.0",
-	"description": "",
+	"description": "Quick and easy benchmarking with various inputs.",
 	"author": "uncenter <hi@uncenter.dev>",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/uncenter/tinybench-compare.git"
+		"url": "https://github.com/uncenter/quickbench.git"
 	},
 	"license": "MIT",
 	"files": [

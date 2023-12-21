@@ -1,10 +1,11 @@
 import type { BenchmarkFunction, BenchmarkResource } from './types';
 
-import { Bench } from 'tinybench';
+import { Bench as TinyBench } from 'tinybench';
 
-export class CompareBench {
+export class Bench {
 	private functions: BenchmarkFunction[];
 	private resources: BenchmarkResource[];
+
 	constructor() {
 		this.functions = [];
 		this.resources = [];
@@ -28,7 +29,7 @@ export class CompareBench {
 
 	run() {
 		for (const resource of this.resources) {
-			const suite = new Bench();
+			const suite = new TinyBench();
 			for (const func of this.functions) {
 				suite.add(func.name, () => func.fn(resource.value));
 			}
