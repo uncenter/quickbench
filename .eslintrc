@@ -40,18 +40,5 @@
 		"unicorn/filename-case": "off",
 		"unicorn/numeric-separators-style": "off",
 		"unicorn/prevent-abbreviations": "off"
-	},
-	"overrides": [
-		{
-			"files": ["test/**"],
-			"plugins": ["vitest"],
-			"extends": ["plugin:vitest/recommended"],
-			"rules": {
-				"vitest/consistent-test-it": ["error", { "fn": "test" }],
-				"vitest/no-standalone-expect": "error",
-				"vitest/no-test-return-statement": "error",
-				"vitest/prefer-lowercase-title": "error"
-			}
-		}
-	]
+	}
 }
