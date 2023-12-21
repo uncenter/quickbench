@@ -1,5 +1,5 @@
 {
-	"name": "quickbench",
+	"name": "@uncenter/quickbench",
 	"version": "0.1.0",
 	"description": "Quick and easy benchmarking with various inputs.",
 	"author": "uncenter <hi@uncenter.dev>",

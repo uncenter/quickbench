@@ -5,16 +5,16 @@ Quick and easy benchmarking with various inputs. Minimal wrapper of `tinybench`.
 ## Installation
 
 ```sh
-npm i quickbench
-pnpm add quickbench
-yarn add quickbench
-bun add quickbench
+npm i @uncenter/quickbench
+pnpm add @uncenter/quickbench
+yarn add @uncenter/quickbench
+bun add @uncenter/quickbench
 ```
 
 ## Usage
 
 ```js
-import { Bench } from 'quickbench';
+import { Bench } from '@uncenter/quickbench';
 
 const bench = new Bench();
 
