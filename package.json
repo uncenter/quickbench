@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"description": "Quick and easy benchmarking with various inputs.",
 	"author": "uncenter <hi@uncenter.dev>",
-	"repository": "uncenter/quickbench.git",
+	"repository": "uncenter/quickbench",
 	"license": "MIT",
 	"files": [
 		"README.md",
