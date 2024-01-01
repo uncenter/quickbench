@@ -24,4 +24,4 @@ bench.addFunction('plus', plus).addFunction('join', join).addFunction('concat', 
 bench.addResource('small array of strings', randomLetterArray({ length: 10 }));
 bench.addResource('large array of strings', randomLetterArray({ length: 100000 }));
 
-bench.run();
+bench.run({ format: 'classic' });
