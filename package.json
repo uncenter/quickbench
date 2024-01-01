@@ -3,10 +3,7 @@
 	"version": "0.1.0",
 	"description": "Quick and easy benchmarking with various inputs.",
 	"author": "uncenter <hi@uncenter.dev>",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/uncenter/quickbench.git"
-	},
+	"repository": "uncenter/quickbench.git",
 	"license": "MIT",
 	"files": [
 		"README.md",
@@ -26,7 +23,6 @@
 	"scripts": {
 		"build": "unbuild",
 		"lint": "tsc && eslint .",
-		"autofix": "eslint --fix .",
 		"format": "prettier --write ."
 	},
 	"dependencies": {
