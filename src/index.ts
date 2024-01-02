@@ -1,6 +1,8 @@
-import type { BenchmarkFunction, BenchmarkResource } from './types';
+import type { BenchmarkFunction, BenchmarkResource, BenchmarkResults, Options } from './types';
 
-import { Bench as TinyBench } from 'tinybench';
+import TinyBench from 'tinybench';
+
+import { format } from './format';
 
 export class Bench {
 	private functions: BenchmarkFunction[];
@@ -27,28 +29,23 @@ export class Bench {
 		return this;
 	}
 
-	run() {
+	run(options?: Options) {
+		const results: BenchmarkResults = [];
+
 		for (const resource of this.resources) {
 			const suite = new TinyBench();
+
 			for (const func of this.functions) {
 				suite.add(func.name, () => func.fn(resource.value));
 			}
+
 			suite.addEventListener('complete', () => {
-				const table = suite.table();
-				const fastest = table
-					.sort(
-						(a, b) =>
-							// @ts-expect-error: `a` and `b` are possibly null.
-							a['Average Time (ns)'] - b['Average Time (ns)'],
-					)
-					.at(0);
-				console.table(table);
-				console.log(
-					// @ts-expect-error: `fastest` is possibly null.
-					`Fastest function for resource '${resource.name}' was '${fastest['Task Name']}'.`,
-				);
+				results.push({ data: suite.table(), resource: resource.name });
 			});
+
 			suite.run();
 		}
+
+		format(options?.format || 'modern', results);
 	}
 }
