@@ -1,3 +1,10 @@
+<div align="center">
+	<h1>🚧 ARCHIVED 🚧</h1>
+	<h3>Use https://vitest.dev/api/#bench instead.</h3>
+</div>
+
+---
+
 # quickbench
 
 Quick and easy benchmarking with various inputs. Minimal wrapper of `tinybench`.
